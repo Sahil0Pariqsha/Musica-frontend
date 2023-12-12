@@ -6,7 +6,6 @@ const SongsCard = ({ image, title, artist }: songCard) => {
   const backgroundImageStyle = {
     backgroundImage: `url(${image})`,
   };
-  // console.log("song card -> ", title);
   return (
     <div>
       <div

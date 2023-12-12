@@ -1,21 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Roboto_Mono, Quicksand } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
 import Header from "../components/Header";
 import { ThemeProvider } from "../components/ThemeProvider";
 import NavVertical from "../components/Nav";
-
-export const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
-
-export const roboto_mono = Roboto_Mono({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-roboto",
-});
 
 export const quicksand = Quicksand({
   subsets: ["latin"],
@@ -34,10 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${roboto_mono.variable} ${quicksand.variable}`}
-    >
+    <html lang="en">
       <head>
         <link
           rel="stylesheet"
@@ -47,17 +32,17 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className="bg-white dark:bg-[#1D2123] p-4 md:p-8 flex font-quicksand">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {/* Vertical Nav-Bar */}
+      <body
+        className={`bg-white dark:bg-[#1D2123] p-4 md:p-8 flex font-quicksand ${quicksand.variable}`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <div className="hidden md:block">
             <NavVertical />
           </div>
-          {/* Main Body */}
           <div className="flex flex-col flex-1">
             <div className="bg-white dark:bg-[#1D2123] h-[100px] w-[100%] fixed top-0 left-0 z-20 mx-auto drop-shadow-lg"></div>
             <Header />
-            <div>{children}</div>
+            {children}
           </div>
         </ThemeProvider>
       </body>

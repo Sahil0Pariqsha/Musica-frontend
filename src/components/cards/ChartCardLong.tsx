@@ -13,7 +13,6 @@ const ChartCardLong = ({
   const [favourite, setFavourite] = useState(fav);
 
   const handleFavClick = () => {
-    // console.log(favourite);
     setFavourite(!favourite);
   };
 
