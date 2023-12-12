@@ -17,11 +17,14 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #1d2123;
+}
+
+.song-carousel::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+}
+
+.nav-seprator-bottom {
+  filter: drop-shadow(2px -2px 2px #fafafa2d);
 }
