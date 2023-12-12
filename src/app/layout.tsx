@@ -5,11 +5,7 @@ import Header from "../components/Header";
 import { ThemeProvider } from "../components/ThemeProvider";
 import NavVertical from "../components/Nav";
 
-export const quicksand = Quicksand({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-quicksand",
-});
+export const quicksand = Quicksand({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Musica-Music-Streaming",
@@ -33,7 +29,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`bg-white dark:bg-[#1D2123] p-4 md:p-8 flex font-quicksand ${quicksand.variable}`}
+        className={`bg-white dark:bg-[#1D2123] p-4 md:p-8 flex font-quicksand ${quicksand.className}`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <div className="hidden md:block">
