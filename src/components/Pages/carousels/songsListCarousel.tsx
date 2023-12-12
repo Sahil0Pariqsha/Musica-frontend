@@ -6,11 +6,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { Keyboard, Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
 const SongsListCarousel = ({ songs }: any) => {
   return (
-    <div className="w-[95vw] md:w-[92vw] mt-3 md:pr-6">
+    <div className="w-[93vw] md:w-[90vw] mt-3 md:pr-6">
       <Swiper
         loop={true}
         breakpoints={{
@@ -22,7 +22,7 @@ const SongsListCarousel = ({ songs }: any) => {
             slidesPerView: 3.5,
             spaceBetween: 20,
           },
-          768: {
+          769: {
             slidesPerView: 4.5,
             spaceBetween: 20,
           },
@@ -30,7 +30,7 @@ const SongsListCarousel = ({ songs }: any) => {
             slidesPerView: 6,
             spaceBetween: 20,
           },
-          1440: {
+          1441: {
             slidesPerView: 7,
             spaceBetween: 10,
           },
