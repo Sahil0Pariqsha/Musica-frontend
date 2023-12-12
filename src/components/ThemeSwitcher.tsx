@@ -1,20 +1,31 @@
 "use client";
 import { useTheme } from "next-themes";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const ThemeSwitcher = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
   useEffect(() => {
-    setTheme("dark");
-  }, []);
+    const storedTheme = localStorage.getItem("preferred-theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+    } else {
+      setTheme("dark");
+    }
+  }, [setTheme]);
+
+  const toggleTheme = () => {
+    const newTheme = resolvedTheme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("preferred-theme", newTheme);
+  };
 
   return (
     <button
-      onClick={() => (theme === "dark" ? setTheme("light") : setTheme("dark"))}
+      onClick={toggleTheme}
       className="md:hover:drop-shadow-glowLight md:dark:hover:drop-shadow-glowDark"
     >
-      {theme === "dark" ? (
+      {resolvedTheme === "dark" ? (
         <i className="fa-solid fa-sun"></i>
       ) : (
         <i className="fa-solid fa-moon"></i>

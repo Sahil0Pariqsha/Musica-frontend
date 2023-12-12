@@ -1,18 +1,14 @@
-"use client";
-import { useTheme } from "next-themes";
 import Image from "next/image";
 import React from "react";
 
 const Search = () => {
-  const { theme, setTheme, systemTheme } = useTheme();
-  //   console.log(theme);
   return (
     <div className="w-full -my-2">
       <form className="search text-[24px] flex-1 mr-4 px-2 border-b-2 rounded-lg border-[#1D2123] dark:border-[#FACD66] bg-[#1D2123]">
         <div className="flex items-center">
           <button type="submit" className="h-full w-[30px]">
             <Image
-              src={theme === "light" ? "/search-light.svg" : "/search.svg"}
+              src="/search.svg"
               alt="search"
               width={30}
               height={30}

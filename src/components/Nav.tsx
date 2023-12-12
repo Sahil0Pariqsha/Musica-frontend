@@ -17,13 +17,10 @@ const Nav = ({ openMenu }: any) => {
         shadow-lg md:shadow-none dark:shadow-neutral-100/20 shadow-cyan-500/20 rounded-[12px] overflow-hidden border-2 md:border-none border-[#5bd6d2] dark:border-[#FACD66] items-center`}
       >
         <Link href={"/"}>
-          <Image
-            src={theme === "light" ? "logo-light.svg" : "/logo.svg"}
-            alt="musica"
-            width={34}
-            height={34}
-            className="mb-6 mr-4 mt-2 md:mr-0 hidden md:block"
-          />
+          <div className="mb-6 mr-4 mt-2 md:mr-0 hidden md:block relative w-8">
+            <i className="fa-solid fa-music absolute -top-[8.5px] -left-2 text-black text-[22px] -z-10"></i>
+            <i className="fa-solid fa-music"></i>
+          </div>
         </Link>
         <ul
           className={`nav-seprator-bottom flex flex-col gap-8 bg-[#0f1112] w-fit px-4 text-center md:rounded-[32px] py-6 border-none md:border-solid border-2 border-[#5bd6d2] dark:border-[#FACD66]`}
