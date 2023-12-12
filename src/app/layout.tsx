@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/Header";
 import { ThemeProvider } from "../components/ThemeProvider";
 import NavVertical from "../components/Nav";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default function RootLayout({
             <div className="bg-white dark:bg-[#1D2123] h-[100px] w-[100%] fixed top-0 left-0 z-20 mx-auto drop-shadow-lg"></div>
             <Header />
             {children}
+            <SpeedInsights />
           </div>
         </ThemeProvider>
       </body>
